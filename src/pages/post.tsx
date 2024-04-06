@@ -71,9 +71,13 @@ const PostLocationForm: React.FC = () => {
             type='text'
             name='location'
             value={formData.location}
-            onChange={(e) =>
-              setFormData({ ...formData, location: e.target.value })
-            }
+            onChange={(e) => {
+              setFormData({ ...formData, location: e.target.value });
+              setImg1("");
+              setImg2("");
+              setImg3("");
+              setImg4("");
+            }}
             className='form-input w-full border border-gray-300 rounded-md py-2 px-3'
           />
         </div>
