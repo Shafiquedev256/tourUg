@@ -4,6 +4,7 @@ import { SearchBar } from "../components/searchBar";
 import { AgentAvailable } from "../components/agentsCard";
 import { Link, useParams } from "react-router-dom";
 import { useFetchTour } from "../hooks/fetchTour";
+import { LoadingListings } from "../skeletons/loadingListings";
 
 const DestinationListingsPage = () => {
   const { city } = useParams();
@@ -26,7 +27,7 @@ const DestinationListingsPage = () => {
         </div>
         <div className='md:w-4/5  md:my-2 overflow-y-scroll no-scrollbar'>
           <div className='py-6  mx-3 flex flex-col justify-evenly space-y-3'>
-            {tours &&
+            {tours.length > 1 ? (
               tours.map((item) => {
                 return (
                   <Link
@@ -54,7 +55,10 @@ const DestinationListingsPage = () => {
                     </div>
                   </Link>
                 );
-              })}
+              })
+            ) : (
+              <LoadingListings />
+            )}
           </div>
         </div>
       </div>
