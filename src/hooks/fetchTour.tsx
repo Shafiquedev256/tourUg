@@ -18,7 +18,7 @@ export const useFetchTour = (city: string) => {
     const getDestinationTours = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/ugtuors/api/destinations/${city}`
+          `https://tourserver-3evw.onrender.com/ugtuors/api/destinations/${city}`
         );
         setTours(response.data);
       } catch (error) {
