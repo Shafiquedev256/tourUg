@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-type Location = {
+export type Location = {
   location: string;
   category: string;
   title: string;

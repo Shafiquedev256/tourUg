@@ -85,7 +85,7 @@ const Tour_page = () => {
                 </p>
               </div>
             </div>
-            <div className='flex flex-col justify-between md:mr-5'>
+            <div className='flex flex-col md:mr-5'>
               <div className='flex flex-col space-x-2 border-2 p-3 w-fit h-fit border-t-blue-500 border-t-4 m-2'>
                 <div className='font-bold text-2xl w-fit text-gray-600'>
                   {filter[0].price}
@@ -100,9 +100,9 @@ const Tour_page = () => {
               <AgentAvailable />
             </div>
           </div>
+          <Footer />
         </div>
       )}
-      <Footer />
     </>
   );
 };
