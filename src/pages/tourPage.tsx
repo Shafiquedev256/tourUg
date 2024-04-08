@@ -23,7 +23,7 @@ const Tour_page = () => {
           <div>
             <div className='bg-gray-100 bg-opacity-75 p-3'>{`Home/city/tours/${tour}`}</div>
           </div>
-          <div className='p-3'>
+          <div className='md:p-3 hidden md:block'>
             <span className='font-bold text-sm text-gray-600 uppercase'>
               {filter[0].category}
             </span>
@@ -51,6 +51,14 @@ const Tour_page = () => {
               ))}
             </Slide>
           </div>
+          <div className='p-3  md:hidden'>
+            <span className='font-bold text-sm text-gray-600 uppercase'>
+              {filter[0].category}
+            </span>
+            <p className='text-3xl font-bold  text-gray-700 title'>
+              {filter[0].title}
+            </p>
+          </div>
           <div className='hidden md:block' onClick={() => setOpenImg(true)}>
             <div className='flex flex-row h-[65vh] p-6 space-x-1'>
               <div className='w-3/5 h-[100%]'>
@@ -70,12 +78,10 @@ const Tour_page = () => {
             <div className='p-3 space-y-3 md:w-3/5'>
               <div className='text-2xl text-gray-600 my-2'>Experience</div>
               <div className='flex flex-row space-x-3 items-center '>
-                <div className='font-bold text-sm text-gray-500'>
+                <div className='font-medium text-sm text-gray-500'>
                   Highlights
                 </div>
-                <p className='bg-gray-100 rounded p-2 w-fit'>
-                  {filter[0].highlights}
-                </p>
+                <p className=' p-2 w-fit'>{filter[0].highlights}</p>
               </div>
               <div className='flex flex-col md:flex-row space-x-3 items-center '>
                 <div className='font-bold text-sm text-gray-500'>
@@ -86,7 +92,7 @@ const Tour_page = () => {
                 </p>
               </div>
             </div>
-            <div className='flex flex-col md:mr-5'>
+            <div className='flex flex-col items-center justify-center md:mr-5 sticky top-o'>
               <div className='flex flex-col space-x-2 border-2 p-3 w-fit h-fit border-t-blue-500 border-t-4 m-2'>
                 <div className='font-bold text-2xl w-fit text-gray-600'>
                   {filter[0].price}

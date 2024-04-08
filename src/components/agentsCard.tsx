@@ -1,7 +1,7 @@
 export const AgentAvailable = () => {
   return (
     <>
-      <div className=' '>
+      <div className='mx-8 md:mx-1'>
         <div className='bg-gray-100 bg-opacity-60 p-4  rounded-2xl '>
           <div className='text-blue-600'> Listed by</div>
           <div>
