@@ -27,7 +27,7 @@ const OfferCard = ({ offer }: Props) => {
 export const Offers = () => {
   const { offers } = useSpacialOffers();
   return (
-    <div className='ml-2 py-4'>
+    <div className='ml-2 py-4' id='offers'>
       <h1 className='text-2xl'>Special Offers</h1>
       <div className='flex flex-row md:justify-center md:items-center py-4 overflow-x-scroll space-x-3 no-scrollbar'>
         {offers.map((item) => (
