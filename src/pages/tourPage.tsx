@@ -6,6 +6,7 @@ import { Slide } from "react-slideshow-image";
 import { useFetchTour } from "../hooks/fetchTour";
 import { useState } from "react";
 import { AgentAvailable } from "../components/agentsCard";
+import { LoadingImages } from "../skeletons/loadingImages";
 
 const Tour_page = () => {
   const { tour, city } = useParams();
@@ -14,12 +15,12 @@ const Tour_page = () => {
   const filter = tours.filter((item) => item.title == tour);
   return (
     <>
-      {filter[0] && (
+      <div className='bg-black'>
+        <Navbar />
+      </div>
+      {filter[0] ? (
         <div>
           <div>
-            <div className='bg-black'>
-              <Navbar />
-            </div>
             <div className='bg-gray-100 bg-opacity-75 p-3'>{`Home/city/tours/${tour}`}</div>
           </div>
           <div className='p-3'>
@@ -100,9 +101,11 @@ const Tour_page = () => {
               <AgentAvailable />
             </div>
           </div>
-          <Footer />
         </div>
+      ) : (
+        <LoadingImages />
       )}
+      <Footer />
     </>
   );
 };

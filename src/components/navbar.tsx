@@ -13,7 +13,7 @@ export const Navbar = () => {
         <Link to='/' className='hover:text-white'>
           Account
         </Link>
-        <Link to='/' className='hover:text-white'>
+        <Link to='#offers' className='hover:text-white'>
           Packages
         </Link>
       </div>
