@@ -26,6 +26,8 @@ const PostLocationForm: React.FC = () => {
   const [img2, setImg2] = useState("");
   const [img3, setImg3] = useState("");
   const [img4, setImg4] = useState("");
+  const [img5, setImg5] = useState("");
+  const [img6, setImg6] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -77,6 +79,8 @@ const PostLocationForm: React.FC = () => {
               setImg2("");
               setImg3("");
               setImg4("");
+              setImg5("");
+              setImg6("");
             }}
             className='form-input w-full border border-gray-300 rounded-md py-2 px-3'
           />
@@ -177,6 +181,34 @@ const PostLocationForm: React.FC = () => {
           <input
             type='text'
             value={img4}
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                imgs: [...formData.imgs, e.target.value],
+              })
+            }
+            className='form-input w-full border border-gray-300 rounded-md py-2 px-3'
+          />
+        </div>
+        <div>
+          <label className='block text-sm font-semibold mb-1'>Image:</label>
+          <input
+            type='text'
+            value={img5}
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                imgs: [...formData.imgs, e.target.value],
+              })
+            }
+            className='form-input w-full border border-gray-300 rounded-md py-2 px-3'
+          />
+        </div>
+        <div>
+          <label className='block text-sm font-semibold mb-1'>Image:</label>
+          <input
+            type='text'
+            value={img6}
             onChange={(e) =>
               setFormData({
                 ...formData,
